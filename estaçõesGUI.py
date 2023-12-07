@@ -1,3 +1,5 @@
+# sistema de estações do ano com interface gráfica
+
 import PySimpleGUI as sg
 
 def estacao_ano(mes, dia):
