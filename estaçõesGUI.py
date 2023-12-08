@@ -16,7 +16,7 @@ def estacao_ano(mes, dia):
 layout = [
     [sg.Text('Informe o dia:'), sg.InputText(key='dia')],
     [sg.Text('Informe o mês:'), sg.InputText(key='mes')],
-    [sg.Button('Verificar Estação'), sg.Button('Limpar'), sg.Button('Sair', button_color=('white', 'red'))],  # Adição da vírgula aqui
+    [sg.Button('Verificar Estação'), sg.Button('Limpar'), sg.Button('Sair', button_color=('white', 'red'))],
     [sg.Text('', size=(20, 1), key='resultado')],
 ]
 
@@ -34,7 +34,7 @@ while True:
 
             if 1 <= mes <= 12:
                 if mes == 2 and dia > 28:
-                    janela['resultado'].update('Dia inválido para o mês informado.')
+                    janela['resultado'].update('Dia inválido para esse mês.')
                 elif 1 <= dia <= 31:
                     if dia < 0 or mes < 0:
                         janela['resultado'].update('Mês ou dia inválido (números negativos).')
@@ -42,7 +42,7 @@ while True:
                         estacao = estacao_ano(mes, dia)
                         janela['resultado'].update(f'Estação: {estacao}')
                 else:
-                    janela['resultado'].update('Dia inválido para o mês informado.')
+                    janela['resultado'].update('Dia inválido.')
             else:
                 janela['resultado'].update('Mês inválido')
 
